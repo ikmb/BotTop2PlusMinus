@@ -165,7 +165,7 @@ char getPlusMinus(CParsedTextfile& manifest, CTwoBit& twobit)
            ( (manifest["SNP"].compare("[C/G]") == 0 || manifest["SNP"].compare("[G/C]") == 0) && (Allele == 'T' || Allele == 'A') )
        )
     {
-        cerr << "SNP " << manifest["SNP"] <<  " at " << manifest["Chr"] << ':' << position << " shows inconsistency to genomic base " << Allele << endl;
+        cerr << manifest["Name"] << " with " << manifest["SNP"] <<  " at " << manifest["Chr"] << ':' << position << " shows inconsistency as genomic base is " << Allele << endl;
         return 'u';
     }
     if(manifest["SNP"].compare("[A/C]") == 0 || manifest["SNP"].compare("[C/A]") == 0)
